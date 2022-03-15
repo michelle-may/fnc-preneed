@@ -34,9 +34,9 @@ module.exports = function(config) {
       return minified.code;
   });
 
-  // config.on('afterBuild', () => {
-	// 	fs.copyFileSync(dataDir + 'plans99.json', outputDir + 'plans99.json');	
-	// });
+  config.on('afterBuild', () => {
+		fs.copyFileSync(dataDir + 'plans99.json', outputDir + 'plans99.json');	
+	});
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");
