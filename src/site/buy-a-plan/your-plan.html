@@ -88,11 +88,11 @@ step: 1
                     <fieldset class="coop-form__row coop-u-margin-b-32">
                         <legend class="coop-form__label">What's most important to you?</legend>
                         <div class="coop-form__choice">
-                            <input class="coop-form__field coop-form__radio" type="radio" name="plan" id="plan-1" value="Higher cost" data-redirect="/buy-a-plan/plan-offers-sg/">
+                            <input class="coop-form__field coop-form__radio" type="radio" name="plan" id="plan-1" value="Higher cost" data-redirect="{{'/buy-a-plan/plan-offers-sb/' | url}}">
                             <label class="coop-form__label" for="plan-1">Higher cost + more flex</label>
                         </div>
                         <div class="coop-form__choice">
-                            <input class="coop-form__field coop-form__radio" type="radio" name="plan" id="plan-2" value="Lower cost" data-redirect="/buy-a-plan/plan-offers-sb/">
+                            <input class="coop-form__field coop-form__radio" type="radio" name="plan" id="plan-2" value="Lower cost" data-redirect="{{'/buy-a-plan/plan-offers-sb/' | url}}">
                             <label class="coop-form__label" for="plan-2">Lower cost + no flex</label>
                         </div>
                     </fieldset>
@@ -103,7 +103,7 @@ step: 1
                     <button class="next-btn coop-btn coop-btn--primary">Next</button>
                 </div>
             </form>
-            <p><a href="/summary/">View summary</a></p>
+            <p><a href="{{'/summary/' | url}}">View summary</a></p>
 
         </div>
     </div>
@@ -112,6 +112,7 @@ step: 1
 <script>
 
 function onSubmitForm() {
+    console.log('onSubmit')
     const form = document.querySelector('.demands-form')
     const plan = document.getElementsByName('plan')
     if(plan[0].checked) {
