@@ -1,0 +1,124 @@
+---
+title: Your plan
+layout: layouts/base.njk
+step: 1
+---
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--large-12">
+            {% include 'components/progress-bar.html' %}
+        </div>
+    </div>
+</div>
+
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--small-12 coop-l-grid__item--large-7">
+            <h1>{{ title }}</h1>
+            <form class="coop-form demands-form" onSubmit="onSubmitForm()" method="get">
+
+                <div class="coop-form__row">
+                    <fieldset id="dob-1" aria-describedby="dob-1-hint">
+                      <legend class="coop-form__label">What is your date of birth?</legend>
+                
+                      <p id="dob-1-hint" class="coop-form__hint">For example 21 12 2020</p>
+                      <p id="dob-1-error" class="coop-form__error" hidden></p>
+                
+                      <div class="coop-form__columns">
+                        <div class="coop-form__column">
+                          <label class="coop-form__label" for="dob-1-day">Day</label>
+                          <input
+                            id="dob-1-day"
+                            type="text"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            maxlength="2"
+                            minlength="2"
+                            autocomplete="bday-day"
+                            class="coop-form__field coop-form__input coop-form__input--width-2"
+                          >
+                        </div>
+                
+                        <div class="coop-form__column">
+                          <label class="coop-form__label" for="dob-1-month">Month</label>
+                          <input
+                            id="dob-1-month"
+                            type="text"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            maxlength="2"
+                            minlength="2"
+                            autocomplete="bday-month"
+                            class="coop-form__field coop-form__input coop-form__input--width-2"
+                          >
+                        </div>
+                
+                        <div class="coop-form__column">
+                          <label class="coop-form__label" for="dob-1-year">Year</label>
+                          <input
+                            id="dob-1-year"
+                            type="text"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            maxlength="4"
+                            minlength="4"
+                            autocomplete="bday-year"
+                            class="coop-form__field coop-form__input coop-form__input--width-4"
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+                </div>
+
+                <div class="coop-form__row">
+                    <h2>Tell us what you're looking for</h2>
+                    <p>By answering a few questions we can help identify which funeral plan might be right for you.</p>
+                    <fieldset class="coop-form__row coop-u-margin-b-32">
+                        <legend class="coop-form__label">What type of funeral do you want?</legend>
+                        <div class="coop-form__choice">
+                            <input class="coop-form__field coop-form__radio" type="radio" name="funeraltype" id="funeraltype-1" value="Burial">
+                            <label class="coop-form__label" for="funeraltype-1">Burial</label>
+                        </div>
+                        <div class="coop-form__choice">
+                            <input class="coop-form__field coop-form__radio" type="radio" name="funeraltype" id="funeraltype-2" value="Cremation">
+                            <label class="coop-form__label" for="funeraltype-2">Cremation</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="coop-form__row coop-u-margin-b-32">
+                        <legend class="coop-form__label">What's most important to you?</legend>
+                        <div class="coop-form__choice">
+                            <input class="coop-form__field coop-form__radio" type="radio" name="plan" id="plan-1" value="Higher cost" data-redirect="/buy-a-plan/plan-offers-sg/">
+                            <label class="coop-form__label" for="plan-1">Higher cost + more flex</label>
+                        </div>
+                        <div class="coop-form__choice">
+                            <input class="coop-form__field coop-form__radio" type="radio" name="plan" id="plan-2" value="Lower cost" data-redirect="/buy-a-plan/plan-offers-sb/">
+                            <label class="coop-form__label" for="plan-2">Lower cost + no flex</label>
+                        </div>
+                    </fieldset>
+                </div>
+                
+
+                <div class="coop-form__row coop-u-margin-b-32">
+                    <button class="next-btn coop-btn coop-btn--primary">Next</button>
+                </div>
+            </form>
+            <p><a href="/summary/">View summary</a></p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+function onSubmitForm() {
+    const form = document.querySelector('.demands-form')
+    const plan = document.getElementsByName('plan')
+    if(plan[0].checked) {
+        form.action = plan[0].dataset.redirect
+    } else {
+        form.action = plan[1].dataset.redirect
+    }
+}
+
+</script>

@@ -1,0 +1,24 @@
+---
+title: Summary
+subtitle: A summary of your choices
+layout: layouts/base.njk
+---
+
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--small-12 coop-l-grid__item--large-7">
+            <h1>{{ title }}</h1>
+            {%- if intro %}<p class="coop-t-lead-p">{{ intro | safe }}</p>{% endif %}
+
+            <p><strong>Your name:</strong> <span data-name="name"></span></p>
+            <p><strong>Address:</strong><br> <span data-name="address"></span></p>
+            <p><strong>Delivery type:</strong> <span data-name="option"></span></p>
+
+            <p><strong>Chosen funeral home:</strong> <span data-name="home"></span></p>
+            <p><strong>Updates by phone:</strong> <span data-name="updates_by_phone" data-show-if="1">Yes</span><span data-name="updates_by_phone" data-hide-if="1">No</span></p>
+            <p><strong>Updates by email:</strong> <span data-name="updates_by_email" data-show-if="1">Yes</span><span data-name="updates_by_email" data-hide-if="1">No</span></p>
+            <p data-name="updates_by_email" data-show-if="1">We will not add your email address to any marketing list.</p>
+            <p class="coop-u-margin-t-32"><a href="/form/" class="coop-btn">Edit your answers</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {% include "header.njk" %}
+    <main id="main" class="coop-prototype-main">
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" %} 
+    {% set js %}
+      {% include "js/forms_storage.js" %}
+      {% include "js/main.js" %}
+    {% endset %}
+    <script>{{ js | jsmin | safe }}</script>
+  </body>
+</html>

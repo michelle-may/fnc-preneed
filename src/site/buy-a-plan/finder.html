@@ -1,0 +1,82 @@
+---
+title: Funeral home location
+intro: Choose the Co-op Funeralcare home you want to carry out the funeral. You can change this and any Co-op funeralcare home across the UK can carry out your funeral.
+layout: layouts/base.njk
+step: 3
+---
+
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--large-12">
+            {% include 'components/progress-bar.html' %}
+        </div>
+    </div>
+</div>
+
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--small-12 coop-l-grid__item--large-7">
+            <h1>Form example</h1>
+            <form class="coop-form" action="/summary/" method="get">
+               
+                <fieldset class="coop-form__row">
+                    <legend class="coop-form__label">Choose your preferred funeral home</legend>
+                    <div class="coop-form__choice coop-u-margin-b-12">
+                        <input type="radio" name="home" id="home-1" value="Home Name 1" class="coop-form__field coop-form__radio">
+                        <label class="coop-form__label fh-card" for="home-1">
+                            Home Name
+                            <span class="fh-card__line">12 Prototype Rd, Codetown, A12 BC3</span>
+                        </label>
+                    </div>
+                    <div class="coop-form__choice coop-u-margin-b-12">
+                        <input type="radio" name="home" id="home-2" value="Home Name 2" class="coop-form__field coop-form__radio">
+                        <label class="coop-form__label fh-card" for="home-2">
+                            Home Name
+                            <span class="fh-card__line">12 Prototype Rd, Codetown, A12 BC3</span>
+                        </label>
+                    </div>
+                    <div class="coop-form__choice coop-u-margin-b-12">
+                        <input type="radio" name="home" id="home-3" value="Home Name 3" class="coop-form__field coop-form__radio">
+                        <label class="coop-form__label fh-card" for="home-3">
+                            Home Name
+                            <span class="fh-card__line">12 Prototype Rd, Codetown, A12 BC3</span>
+                        </label>
+                    </div>                        
+                </fieldset>
+                
+                <div class="coop-form__row coop-u-margin-b-32">
+                    <button class="coop-btn coop-btn--primary">Submit</button>
+                </div>
+            </form>
+            <p><a href="/summary/">View summary</a></p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .fh-card.coop-form__label {
+        border: 1px solid black;
+        border-radius: 12px;
+        padding: 12px;
+        padding-left: 48px;
+    }
+
+    .fh-card.coop-form__label:before {
+        top: 14px;
+        left: 16px;
+    }
+
+    .fh-card.coop-form__label:after {
+        top: 20px;
+        left: 22px;
+    }
+
+    .coop-form__choice :focus+.fh-card {
+        outline-offset: 3px;
+        outline: 2px solid var(--color-link--focus);
+    }
+
+    .fh-card__line {
+        display: block;
+    }
+</style>

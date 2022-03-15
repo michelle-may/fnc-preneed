@@ -1,0 +1,70 @@
+---
+title: Your plan offers
+layout: layouts/base.njk
+step: 2
+---
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--large-12">
+            {% include 'components/progress-bar.html' %}
+        </div>
+    </div>
+</div>
+
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--small-12 coop-l-grid__item--large-7">
+            <h1>{{ title }}</h1>
+            <div class="tabbed coop-u-margin-b-64">
+                <ul>
+                <li>
+                    <a href="#section1">Silver</a>
+                </li>
+                <li>
+                    <a href="#section2">Gold</a>
+                </li>
+                </ul>
+                <section id="section1">
+                <h2>Silver</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
+                </section>
+                <section id="section2">
+                <h2>Gold</h2>
+                <p>Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.</p>
+                </section>
+            </div>
+
+            <div class="calc">
+                <h2>Ways of paying</h2>
+                <fieldset class="coop-form__row coop-u-margin-b-32">
+                    <legend class="coop-form__label">How would you like to pay?</legend>
+                    <div class="coop-form__choice">
+                        <input class="coop-form__field coop-form__radio" type="radio" name="payment" id="payment-1" value="Pay in full">
+                        <label class="coop-form__label" for="payment-1">Pay in full</label>
+                    </div>
+                    <div class="coop-form__choice">
+                        <input class="coop-form__field coop-form__radio" type="radio" name="payment" id="payment-2" value="Pay in instalments">
+                        <label class="coop-form__label" for="payment-2">Pay in instalments</label>
+                    </div>
+                </fieldset>
+
+                <div class="coop-form__row coop-u-margin-b-32">
+                    <label class="coop-form__label" for="deposit">Deposit</label>
+                    <div class="deposit">
+                        <span class="deposit__pound">£</span>
+                        <input class="coop-form__field coop-form__input deposit__input" id="deposit" type="number" name="deposit">
+                    </div>
+                </div>
+
+                <div class="coop-form__row coop-u-margin-b-32" style="width:200px;">
+                  <label class="coop-form__label" for="title">Payment length</label>
+                  <select class="coop-form__field coop-form__select" id="title" name="title">
+                      <option value="xx">xx</option>
+                      <option value="xxx">xxx</option>
+                  </select>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</div>

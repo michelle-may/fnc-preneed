@@ -1,0 +1,106 @@
+---
+title: Your details
+layout: layouts/base.njk
+step: 2
+---
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--large-12">
+            {% include 'components/progress-bar.html' %}
+        </div>
+    </div>
+</div>
+
+<div class="coop-l-container">
+    <div class="coop-l-grid coop-u-margin-b-64">
+        <div class="coop-l-grid__item coop-l-grid__item--small-12 coop-l-grid__item--large-7">
+            <h1>{{ title }}</h1>
+            <form class="coop-form" action="/summary/" method="get">
+                <div class="coop-form__row coop-u-margin-b-32" style="width:200px;">
+                    <label class="coop-form__label" for="title">Title</label>
+                    <select class="coop-form__field coop-form__select" id="title" name="title">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Mx">Mx</option>
+                        <option value="Dr">Dr</option>
+                        <option value="Reverend">Reverend</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="coop-form__row coop-u-margin-b-32">
+                    <label class="coop-form__label" for="first-name">First name</label>
+                    <input class="coop-form__field coop-form__input" id="first-name" type="text" name="first-name">
+                </div>
+                
+                <div class="coop-form__row coop-u-margin-b-32">
+                    <label class="coop-form__label" for="last-name">Last name</label>
+                    <input class="coop-form__field coop-form__input" id="last-name" type="text" name="last-name">
+                </div>
+
+                <div class="coop-form__row">
+                    <fieldset id="dob-1" aria-describedby="dob-1-hint">
+                      <legend class="coop-form__label">What is your date of birth?</legend>
+                
+                      <p id="dob-1-hint" class="coop-form__hint">For example 21 12 2020</p>
+                      <p id="dob-1-error" class="coop-form__error" hidden></p>
+                
+                      <div class="coop-form__columns">
+                        <div class="coop-form__column">
+                          <label class="coop-form__label" for="dob-1-day">Day</label>
+                          <input
+                            id="dob-1-day"
+                            type="text"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            maxlength="2"
+                            minlength="2"
+                            autocomplete="bday-day"
+                            class="coop-form__field coop-form__input coop-form__input--width-2"
+                          >
+                        </div>
+                
+                        <div class="coop-form__column">
+                          <label class="coop-form__label" for="dob-1-month">Month</label>
+                          <input
+                            id="dob-1-month"
+                            type="text"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            maxlength="2"
+                            minlength="2"
+                            autocomplete="bday-month"
+                            class="coop-form__field coop-form__input coop-form__input--width-2"
+                          >
+                        </div>
+                
+                        <div class="coop-form__column">
+                          <label class="coop-form__label" for="dob-1-year">Year</label>
+                          <input
+                            id="dob-1-year"
+                            type="text"
+                            pattern="[0-9]*"
+                            inputmode="numeric"
+                            maxlength="4"
+                            minlength="4"
+                            autocomplete="bday-year"
+                            class="coop-form__field coop-form__input coop-form__input--width-4"
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                
+
+                <div class="coop-form__row coop-u-margin-b-32">
+                    <button class="next-btn coop-btn coop-btn--primary">Next</button>
+                </div>
+            </form>
+            <p><a href="/summary/">View summary</a></p>
+
+        </div>
+    </div>
+</div>
+

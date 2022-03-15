@@ -1,0 +1,28 @@
+/* colours */
+:root {
+    --blue-core: #48577A;
+    --blue-05: #1F3152;
+    --teal-core: #0F8482;
+    --teal-00: #E1ECEC;
+    --pink: #C47D77;
+}
+
+h1,h2,h3 {
+    color: var(--blue-05);
+}
+
+.step-bar ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    color: var(--blue-core);
+}
+
+.step__active, .step__complete {
+    font-weight: bold;
+}
+
+.step__active {
+    border-bottom: 2px solid var(--blue-core)
+}

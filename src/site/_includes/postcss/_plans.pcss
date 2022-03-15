@@ -1,0 +1,148 @@
+.money {
+    position: relative;
+}
+
+.money__pound {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    transform: translateY(-50%);
+
+    font-weight: 500;
+}
+
+.money__input {
+    width: 200px;
+    padding-left: 24px;
+}
+
+[role="tablist"] {
+  display: flex;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+[role="tablist"] li {
+  flex-grow: 1;
+}
+ 
+[role="tablist"] li, [role="tablist"] a {
+  display: inline-block;
+  width: 100%;
+} 
+
+[role="tablist"] li:first-child {
+  padding-right: 24px;
+}
+
+.plans__tab {
+  background-color: #F1F1F1;
+  border-width: 20px 0 0 0;
+  border-style: solid;
+  border-radius: 8px 8px 0 0;
+  text-decoration: none;
+  padding: 0.5rem 1em;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.plans__tab[aria-selected]:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+.plans__tab-simple, .plans__content-simple {
+  border-color: var(--teal-core);
+}
+
+.plans__tab-bronze, .plans__content-bronze {
+  border-color: var(--pink);
+}
+
+[role="tablist"] [aria-selected] {
+  border-width: 20px 2px 0 2px;
+  background: #fff;
+  border-bottom: 0;
+  position: relative;
+}
+
+[role="tabpanel"] {
+  border-style: solid;
+  border-width: 2px;
+  padding: 1.5rem;
+}
+
+[role="tabpanel"] * + * {
+  margin-top: 0.75rem;
+}
+
+.payment-selection {
+  background-color: var(--teal-00);
+  padding: 1.6em;
+}
+
+.pricing-card {
+  background-color: #F1F1F1;
+  border-top: 10px solid;
+  border-bottom: 4px solid;
+  border-radius: 4px 4px 0 0;
+}
+.pricing-card__simple {
+  border-color: var(--teal-core)
+}
+.pricing-card__bronze {
+  border-color: var(--pink)
+}
+
+.pricing {
+  font-size: var(--type-body-s);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.pricing dt, .pricing dd {
+  margin: 0;
+  padding: 0.5em 0;
+  border-bottom: 4px solid #C4C4C4;
+}
+
+.pricing dt:last-of-type, 
+.pricing dd:last-child {
+  border: none;
+}
+
+.pricing dt {
+  font-weight: 600;
+  padding-left: 0.5em;
+}
+
+.pricing dd {
+  text-align: right;
+  padding-right: 0.5em;
+}
+
+@media (min-width: 48em) {
+  .pricing {
+    font-size: var(--type-body-l);
+  }
+}
+
+@media (max-width: 550px) {
+  
+  /* [role="tablist"] li, [role="tablist"] a {
+    display: block;
+    position: static;
+  } */
+  
+  /* [role="tablist"] [aria-selected]::after {
+    content: '\0020⬅';
+  } */
+
+  
+}

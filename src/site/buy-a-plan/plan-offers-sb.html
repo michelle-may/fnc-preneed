@@ -1,0 +1,353 @@
+---
+title: Your plan offers
+layout: layouts/base.njk
+step: 1
+---
+
+<div class="coop-l-container">
+  <div class="coop-l-grid coop-u-margin-b-64">
+    <div class="coop-l-grid__item coop-l-grid__item--large-12">
+      {% include 'components/progress-bar.html' %}
+    </div>
+  </div>
+</div>
+
+<div class="coop-l-container">
+  <div class="coop-l-grid coop-u-margin-b-64">
+    <div class="coop-l-grid__item coop-l-grid__item--small-12 coop-l-grid__item--large-7">
+      <h1>{{ title }}</h1>
+      <div class="tabbed plans coop-u-margin-b-64">
+        <ul>
+          <li>
+            <a class="plans__tab plans__tab-simple coop-t-h3" href="#section1">Simple</a>
+          </li>
+          <li>
+            <a class="plans__tab plans__tab-bronze coop-t-h3" href="#section2">Bronze</a>
+          </li>
+        </ul>
+        <section id="section1" class="plans__content-simple">
+          <h2>Simple</h2>
+          <p class="coop-t-h1"><span class="coop-t-h4">Single payment of</span><br>£{{ plans99[0]['planCost'] }}</p>
+          <h3>Included</h3>
+          <ul>
+            <li>A contribution of £1,100 towards defined third party fees (cremation fees are guaranteed)
+              Wood effect coffin</li>
+            <li>Fixed cortege route</li>
+            <li>Hearse</li>
+            <li>Pallbearers – we can provide Co-op personnel to carry the coffin, or family and friends can carry the coffin or use a wheeled bier</li>
+          </ul>
+          <h3>Not included</h3>
+          <ul>
+            <li>Limousine</li>
+          </ul>
+          <h3>Exclusions</h3>
+          <ul>
+            <li>Restricted date and time for the funeral</li>
+            <li>Visiting the private remembrance room only in normal working hours with pre-arranged appointment</li>
+          </ul>
+        </section>
+        <section id="section2" class="plans__content-bronze">
+          <h2>Bronze</h2>
+          <p class="coop-t-h1"><span class="coop-t-h4">Single payment of</span><br>£{{ plans99[1]['planCost'] }}</p>
+          <h3>Included</h3>
+          <ul>
+            <li>A contribution of £1,100 towards defined third party fees (cremation fees are guaranteed)
+              Wood effect coffin</li>
+            <li>Fixed cortege route</li>
+            <li>Hearse</li>
+            <li>Pallbearers – we can provide Co-op personnel to carry the coffin, or family and friends can carry the coffin or use a wheeled bier</li>
+          </ul>
+          <h3>Not included</h3>
+          <ul>
+            <li>Limousine</li>
+          </ul>
+          <h3>Exclusions</h3>
+          <ul>
+            <li>Restricted date and time for the funeral</li>
+            <li>Visiting the private remembrance room only in normal working hours with pre-arranged appointment</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="payment-selection">
+        <h2>Plan selection</h2>
+
+        <fieldset class="coop-form__row coop-u-margin-b-32">
+          <legend class="coop-t-h3">Select your plan</legend>
+          <div class="coop-form__choice">
+            <input class="coop-form__field coop-form__radio plan-selection" type="radio" name="plan-selection" id="plan-selection-1"
+              value="Simple">
+            <label class="coop-form__label" for="plan-selection-1">Simple</label>
+          </div>
+          <div class="coop-form__choice">
+            <input class="coop-form__field coop-form__radio plan-selection" type="radio" name="plan-selection" id="plan-selection-2"
+              value="Bronze">
+            <label class="coop-form__label" for="plan-selection-2">Bronze</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="coop-form__row coop-u-margin-b-32">
+          <legend class="coop-t-h3">How would you like to pay?</legend>
+          <div class="coop-form__choice">
+            <input class="coop-form__field coop-form__radio paydio" type="radio" name="payment" id="payment-1"
+              value="Pay in full">
+            <label class="coop-form__label" for="payment-1">Pay in full</label>
+          </div>
+          <div class="coop-form__choice">
+            <input class="coop-form__field coop-form__radio paydio" type="radio" name="payment" id="payment-2"
+              value="Pay in instalments">
+            <label class="coop-form__label" for="payment-2">Pay in instalments</label>
+          </div>
+        </fieldset>
+
+        <div class="instalment-calc" style="display:none;">
+          <p>You can spread your payments over 6 months to 25 years. If you choose to pay the balance within 12 months you will pay no extra costs. </p>
+          <p>If you split the payments over more than 12 months, there will be an additional 'instalment charge' (like interest), meaning that the total you pay will end up more than we've quoted.</p>
+
+          <fieldset class="coop-form__row coop-u-margin-b-32">
+            <legend class="coop-form__label">Calculate instalments by</legend>
+            <div class="coop-form__choice">
+              <input class="coop-form__field coop-form__radio calc-radio" type="radio" name="calculation" id="calculation-1"
+                value="Payment length">
+              <label class="coop-form__label" for="calculation-1">Payment length</label>
+            </div>
+            <div class="coop-form__choice">
+              <input class="coop-form__field coop-form__radio calc-radio" type="radio" name="calculation" id="calculation-2"
+                value="Monthly budget">
+              <label class="coop-form__label" for="calculation-2">Monthly budget</label>
+            </div>
+          </fieldset>
+
+          <!-- PAYMENT LENGTH -->
+          <div class="payment-length-block" style="display: none;">
+            <div class="coop-form__row coop-u-margin-b-32">
+              <label class="coop-form__label" for="deposit">Deposit</label>
+              <p id="dob-1-hint" class="coop-form__hint" style="color:#282828">Minimum £99</p>
+              <div class="money">
+                <span class="money__pound">£</span>
+                <input class="coop-form__field coop-form__input money__input" id="deposit" type="number" name="deposit" min="99" value="99">
+              </div>
+            </div>
+
+            <div class="coop-form__row coop-u-margin-b-32" style="width:200px;">
+              <label class="coop-form__label" for="payment-length">Payment length</label>
+              <select class="coop-form__field coop-form__select" id="payment-length" name="payment-length">
+                {% if plans99[0]['premiums'].length > 0 %}
+                  {% for item in plans99[0]['premiums'] %}
+                    {% if item.paymentTermName.length > 0 %}
+                    {% if loop.first %}
+                    <!-- do nothing -->
+                    {% else %}
+                      <option value="{{ item.paymentTermName }}" data-index="{{ loop.index }}">{{ item.paymentTermName }}</option>
+                    {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </select>
+            </div>
+          </div>
+
+          <!-- MONTHLY BUDGET -->
+          <div class="monthly-budget-block" style="display: none;">
+            <div class="coop-form__row coop-u-margin-b-32">
+              <label class="coop-form__label" for="deposit">Deposit</label>
+              <p id="dob-1-hint" class="coop-form__hint" style="color:#282828">Minimum £99</p>
+              <div class="money">
+                <span class="money__pound">£</span>
+                <input class="coop-form__field coop-form__input money__input" id="deposit" type="number" name="deposit" min="99" value="99">
+              </div>    
+            </div>
+            
+            <div class="coop-form__row coop-u-margin-b-32">
+              <label class="coop-form__label" for="monthly-budget">Monthly repayment</label>
+              <p id="dob-1-hint" class="coop-form__hint" style="color:#282828">Minimum £99</p>
+              <div class="money">
+                <span class="money__pound">£</span>
+                <input class="coop-form__field coop-form__input money__input" id="monthly-budget" type="number" name="monthly-budget" min="99" value="99">
+              </div>    
+            </div>  
+          </div>
+
+          <div class="pricing-cards" style="display:none;">
+            <!-- SIMPLE PRICING CARD/TABLE -->
+            <div class="pricing-card pricing-card__simple" style="display:none;">
+              <h3>Simple plan</h3>
+              <dl class="pricing">
+                <dt>Base price</dt>
+                <dd class="pricing__plancost-simple">£{{ plans99[0]['planCost'] }}</dd>
+                
+                <dt class="pricing__charges-head-simple" style="display: none;">Instalment charges</dt>
+                <dd class="pricing__charges-simple" style="display: none;"></dd>
+
+                <dt>First instalment</dt>
+                <dd class="pricing__first-simple">£{{ plans99[0]['premiums'][1]['firstInstalment'] }}</dd>
+
+                <dt class="pricing__monthly-head-simple"><span class="month-indicator-simple">6</span> monthly instalments</dt>
+                <dd class="pricing__monthly-simple">£{{ plans99[0]['premiums'][1]['regularInstalment'] }}</dd>
+
+                <dt>Deposit amount</dt>
+                <dd class="pricing__deposit">£99</dd>
+
+                <dt>Total cost of plan</dt>
+                <dd class="pricing__total-simple">£{{ plans99[0]['premiums'][1]['totalCost'] }}</dd>
+              </dl>
+            </div>
+
+            <!-- BRONZE PRICING CARD/TABLE -->
+            <div class="pricing-card pricing-card__bronze" style="display:none;">
+              <h3>Bronze plan</h3>
+              <dl class="pricing">
+                <dt>Base price</dt>
+                <dd class="pricing__plancost-bronze">£{{ plans99[1]['planCost'] }}</dd>
+                
+                <dt class="pricing__charges-head-bronze" style="display: none;">Instalment charges</dt>
+                <dd class="pricing__charges-bronze" style="display: none;"></dd>
+
+                <dt>First instalment</dt>
+                <dd class="pricing__first-bronze">£{{ plans99[1]['premiums'][1]['firstInstalment'] }}</dd>
+
+                <dt class="pricing__monthly-head-bronze"><span class="month-indicator-bronze">6</span> monthly instalments</dt>
+                <dd class="pricing__monthly-bronze">£{{ plans99[1]['premiums'][1]['regularInstalment'] }}</dd>
+
+                <dt>Deposit amount</dt>
+                <dd class="pricing__deposit-bronze">£99</dd>
+
+                <dt>Total cost of plan</dt>
+                <dd class="pricing__total-bronze">£{{ plans99[1]['premiums'][1]['totalCost'] }}</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+    // show correct plan table
+    const planChoice = document.querySelectorAll('.plan-selection')
+    const simple = document.querySelector('.pricing-card__simple')
+    const bronze = document.querySelector('.pricing-card__bronze')
+    for (const n of planChoice) {
+      n.onclick = (e) => {
+        if(e.target.id == "plan-selection-1") {
+          simple.style.display = "block"
+          bronze.style.display = "none"
+        } 
+        if(e.target.id == "plan-selection-2") {
+          bronze.style.display = "block"
+          simple.style.display = "none"
+        } 
+      }
+    }
+
+  // show calculator if pay in instalments is chosen
+  const paymentChoice = document.querySelectorAll('.paydio')
+  const calc = document.querySelector('.instalment-calc')
+  for (const n of paymentChoice) {
+    n.onclick = (e) => {
+      if(e.target.id == "payment-2") {
+        calc.style.display = "block"
+      } else {
+        calc.style.display = "none"
+
+      }
+    }
+  }
+
+  // show budget or payment term
+  const calcChoice = document.querySelectorAll('.calc-radio')
+  const paymentLengthCalc = document.querySelector('.payment-length-block')
+  const cardTable = document.querySelector('.pricing-cards')
+  for (const n of calcChoice) {
+    n.onclick = (e) => {
+      if(e.target.id == "calculation-1") {
+        paymentLengthCalc.style.display = "block"
+        cardTable.style.display = "block"
+      } else {
+        paymentLengthCalc.style.display = "none"
+        cardTable.style.display = "none"
+      }
+    }
+  }
+
+  // get monthly budget
+  // get input
+
+   
+  document.addEventListener('DOMContentLoaded', init, false);
+  async function init() {
+    let div = document.querySelector('.test');
+    let resp = await fetch('/plans99.json');
+    let data = await resp.json();
+
+    const costSimple = document.querySelector('.pricing__plancost-simple')
+    const totalCostSimple = document.querySelector('.pricing__cost-simple')
+    const chargesSimple = document.querySelector('.pricing__charges-simple')
+    const chargesHeadSimple = document.querySelector('.pricing__charges-head-simple')
+
+    const firstSimple = document.querySelector('.pricing__first-simple')
+    const monthlySimple = document.querySelector('.pricing__monthly-simple')
+    const monthsSimple = document.querySelector('.month-indicator-simple')
+
+    const costBronze = document.querySelector('.pricing__plancost-bronze')
+    const totalCostBronze = document.querySelector('.pricing__cost-bronze')
+    const chargesBronze = document.querySelector('.pricing__charges-bronze')
+    const chargesHeadBronze = document.querySelector('.pricing__charges-head-bronze')
+
+    const firstBronze = document.querySelector('.pricing__first-bronze')
+    const monthlyBronze = document.querySelector('.pricing__monthly-bronze')
+    const monthsBronze = document.querySelector('.month-indicator-bronze')
+
+
+    let i = 1; // default value
+
+    function selectChange() {
+    // console.log(`${event.target.value} the index is ${this}`)
+
+      i = event.target.options[event.target.selectedIndex].dataset.index -1;
+     // let planCostOutput = `${data[i]['planCost']}`
+      let firstOutputSimple = `£${data[1]['premiums'][i]['firstInstalment']}`
+      let monthlyOutputSimple = `£${data[1]['premiums'][i]['regularInstalment']}`
+      let chargesOutputSimple = `£${data[1]['premiums'][i]['totalInstalmentCharge1']}`
+      let totalCostOutputSimple = `£${data[1]['premiums'][i]['totalCost']}`
+      let monthOutputSimple = `£${data[1]['premiums'][i]['noOfInstalments']}`
+
+      let firstOutputBronze = `£${data[2]['premiums'][i]['firstInstalment']}`
+      let monthlyOutputBronze = `£${data[2]['premiums'][i]['regularInstalment']}`
+      let chargesOutputBronze = `£${data[2]['premiums'][i]['totalInstalmentCharge1']}`
+      let totalCostOutputBronze = `£${data[2]['premiums'][i]['totalCost']}`
+      let monthOutputBronze = `£${data[1]['premiums'][i]['noOfInstalments']}`
+
+
+      firstSimple.innerHTML = firstOutputSimple
+      monthlySimple.innerHTML = monthlyOutputSimple
+      totalCostSimple.innerHTML = totalCostOutputSimple
+      monthsSimple.innerHTML = monthOutputSimple
+
+      firstBronze.innerHTML = firstOutputBronze
+      monthlyBronze.innerHTML = monthlyOutputBronze
+      totalCostBronze.innerHTML = totalCostOutputBronze
+      monthsBronze.innerHTML = monthOutputBronze
+
+      if(chargesOutputSimple != "£0") {
+        console.log("not empty")
+        chargesSimple.style.display = 'inline'
+        chargesHeadSimple.style.display = 'inline'
+        chargesSimple.innerHTML = chargesOutputSimple
+
+        chargesBronze.style.display = 'inline'
+        chargesHeadBronze.style.display = 'inline'
+        chargesBronze.innerHTML = chargesOutputBronze
+      }
+
+      
+    }
+
+    const selectElement = document.querySelector('#payment-length')
+    selectElement.addEventListener('change', selectChange)
+
+  }
+</script>
