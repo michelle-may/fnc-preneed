@@ -280,7 +280,7 @@ step: 1
   document.addEventListener('DOMContentLoaded', init, false);
   async function init() {
     let div = document.querySelector('.test');
-    let resp = await fetch('/plans99.json');
+    let resp = await fetch('../../plans99.json');
     let data = await resp.json();
 
     const costSimple = document.querySelector('.pricing__plancost-simple')
