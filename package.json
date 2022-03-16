@@ -19,7 +19,7 @@
     "url": "https://github.com/coopdigital/11ty-prototyping-kit"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
     "@coopdigital/component-card--product": "^2.2.5",
     "@coopdigital/component-notification": "^1.2.1",
